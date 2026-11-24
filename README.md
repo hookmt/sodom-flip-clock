@@ -13,7 +13,7 @@ Built specifically to solve common issues on wall-mounted dashboard tablets (inc
 - **Multi-language Auto-detection:** Automatically displays the day of week and date in Polish if Home Assistant is set to Polish, or in English for any other language. Can also be manually forced in YAML (`language: en` or `language: pl`).
 - **Full Compatibility with Legacy Tablets:** Does not use CSS Container Queries (`cqw` / `@container`) that collapse cards to 0 px on WebView < 105 (e.g. Android 7.0 / Nougat). Responsiveness is handled smoothly via `ResizeObserver`.
 - **True Timezone Sync:** Reads `hass.config.time_zone` directly from your Home Assistant server, preventing wrong time displays on tablets with desynchronized local clocks or missing battery RTCs.
-- **0% CPU Overhead:** The blinking colon runs entirely on GPU keyframes (`opacity: 1 <-> 0.15`). The 3D flip animation triggers only for the specific digit that changes.
+- **Ultra-low CPU Overhead (GPU-Accelerated):** The blinking colon runs entirely on GPU keyframes (opacity: 1 <-> 0.15) without JavaScript DOM reflows. The 3D flip animation triggers only for the specific digit that changes in a given minute, minimizing processor load on wall tablets.
 
 ---
 
